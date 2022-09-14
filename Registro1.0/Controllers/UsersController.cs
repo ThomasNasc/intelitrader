@@ -29,8 +29,8 @@ namespace Registro1._0.Controllers
         public async Task<ActionResult> GetAllUsuarios()
         {
             var users = await _userService.GetUsuarios();
-      
-            
+
+
             if (users.Any())
             {
                 return Ok(users);
@@ -45,14 +45,13 @@ namespace Registro1._0.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetAsyncUser(string id)
         {
-            var user = await _userService.GetUser(id);
-            if (user == null)
+            var _user = await _userService.GetUser(id);
+            if (_user.Id == "Usuario Invalido")
             {
-         
                 return NotFound();
             }
 
-            return  Ok(user);
+            return Ok(_user);
         }
 
 
@@ -60,10 +59,8 @@ namespace Registro1._0.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAsyncUser(string id, User user)
         {
-            return new ObjectResult(null)
-            {
-                StatusCode = (int)await _userService.PutUser(id, user)
-            };
+            return await _userService.PutUser(id, user);
+            
 
 
         }
@@ -73,21 +70,22 @@ namespace Registro1._0.Controllers
         [HttpPost]
         public async Task<ActionResult> PostAsyncUser(User user)
         {
+            if (user.firstName == null || user.age == 0)
+            {
+                return BadRequest();
+            }
 
             var _user = await _userService.PostUser(user);
- 
+       
 
             return CreatedAtAction("GetAsyncUser", new { id = _user.Id }, _user);
         }
 
         //// DELETE: api/Users/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleterAsyncUser(string id)
+        public async Task<IActionResult> DeleteAsyncUser(string id)
         {
-            return new ObjectResult(null)
-            {
-                StatusCode = (int)await _userService.DeleteUser(id)
-            };
+            return  await _userService.DeleteUser(id)  ;
         }
 
 

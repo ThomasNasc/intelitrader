@@ -18,33 +18,52 @@ namespace Registro1._0.Services
             _logger = logger;
         }
 
-        public async Task<HttpStatusCode> DeleteUser(string id)
+        public async Task<ObjectResult> DeleteUser(string id)
         {
-            if (_context == null)
-            {
-                _logger.LogInformation(" DATABASE NÃO ENCONTRADA ");
-                return HttpStatusCode.NotFound;
-            }
+
          
             var user = await _context.Usuarios.FindAsync(id);
             if (user == null)
             {
                 _logger.LogInformation(" USUARIO NAO ENCONTRADO ");
-                return HttpStatusCode.NotFound;
+                return new ObjectResult(null)
+                {
+                    StatusCode = 404
+                } ;
             }
             _context.Usuarios.Remove(user);
             await _context.SaveChangesAsync();
             _logger.LogInformation(" USUARIO {id} REMOVIDO ", id);
-            return HttpStatusCode.NoContent;
+              return new ObjectResult(null)
+                {
+                    StatusCode = 204
+                } ;
 
         }
 
+     
+
         public async Task <User> GetUser(string id)
         {
-            var user = await _context.Usuarios.FindAsync(id);
-            _logger.LogInformation(" Informacoes do Usuario id: {id} coletadas", user.Id);
+            var UserInvalid = new User
+            {
+                Id = "Usuario Invalido",
+                firstName = "Invalido",
+                age = 0,
+                dateOfCreation = DateTime.Now
+            };
+            if (UserExists(id)){
+             
+                var user = await _context.Usuarios.FindAsync(id);
 
-            return user;
+                _logger.LogInformation(" Informacoes do Usuario id: {id} coletadas", user.Id);
+                return user;
+            }
+            else
+            {
+                return UserInvalid;
+            }
+            
          
         }
 
@@ -68,6 +87,8 @@ namespace Registro1._0.Services
 
         public async Task<User> PostUser(User user)
         {
+       
+        
             var setUser = new User()
             {
                 Id = Guid.NewGuid().ToString(),
@@ -83,7 +104,7 @@ namespace Registro1._0.Services
             return setUser;
         }
 
-        public async Task<HttpStatusCode> PutUser(string id, User user)
+        public async Task<ObjectResult> PutUser(string id, User user)
         {
             var userInFocus = await _context.Usuarios.FindAsync(id);
             if (userInFocus != null)
@@ -113,7 +134,10 @@ namespace Registro1._0.Services
                 if (!UserExists(id))
                 {
                     _logger.LogInformation(" USUARIO id: {id} NÃO ENCONTRADO ", id);
-                    return HttpStatusCode.NotFound;
+                    return new ObjectResult(null)
+                    {
+                        StatusCode = 404
+                    };
 
                 }
                 else
@@ -121,7 +145,10 @@ namespace Registro1._0.Services
                     throw;
                 }
             }
-            return HttpStatusCode.NoContent;
+        return new ObjectResult(null)
+            {
+                StatusCode = 204
+            };
         }
 
         private bool UserExists(string id)

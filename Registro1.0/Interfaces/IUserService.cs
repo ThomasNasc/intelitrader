@@ -8,8 +8,8 @@ namespace Registro1._0.Interfaces
     {
          Task<List<User>> GetUsuarios();
         Task<User> GetUser(string id);
-        Task<HttpStatusCode> PutUser(string id, User user);
+        Task<ObjectResult> PutUser(string id, User user);
        Task<User> PostUser(User user);
-        Task<HttpStatusCode> DeleteUser(string id);
+        Task<ObjectResult> DeleteUser(string id);
     }
 }
