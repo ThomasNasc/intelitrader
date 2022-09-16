@@ -18,12 +18,6 @@ C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Castle.C
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\EntityFramework.SqlServer.dll
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\EntityFramework.dll
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\FluentAssertions.dll
-C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\System.Web.Mvc.dll
-C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\System.Web.Razor.dll
-C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\System.Web.Helpers.dll
-C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
-C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
-C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\System.Web.WebPages.dll
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -44,7 +38,6 @@ C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Microsof
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Microsoft.TestPlatform.CrossPlatEngine.dll
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Microsoft.TestPlatform.Utilities.dll
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.Common.dll
-C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Moq.dll
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Newtonsoft.Json.dll
