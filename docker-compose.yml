@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  registro1.0:
+    image: ${DOCKER_REGISTRY-}registro10
+    build:
+      context: .
+      dockerfile: .
+    ports:
+    - "8081:80"
+    depends_on:
+    - sqldata
+
+
+sqldata:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+    - SA_PASSWORD = Thomas.19983
+    - ACCEPT_EULA=Y
+    volumes:
+    -   C:\Users\Thomas\Desktop\DADOSSQL:/var/opt/mssql/data
+    ports:
+    - "1450:1433"
+  
