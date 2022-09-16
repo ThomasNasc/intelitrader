@@ -1,24 +1,30 @@
-version: '3.4'
-
-services:
-  registro1.0:
-    image: ${DOCKER_REGISTRY-}registro10
-    build:
-      context: .
-      dockerfile: .
-    ports:
-    - "8081:80"
-    depends_on:
-    - sqldata
-
-
-sqldata:
-    image: mcr.microsoft.com/mssql/server:2022-latest
+--- 
+services: 
+  registro: 
+    build: 
+      context: "."
+      dockerfile: Registro/Dockerfile
+    ports: 
+      - "8080:80"
+      - "8081:443"
     environment:
-    - SA_PASSWORD = Thomas.19983
-    - ACCEPT_EULA=Y
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: "8081"
+      ASPNETCORE_ENVIRONMENT: "Development"
     volumes:
-    -   C:\Users\Thomas\Desktop\DADOSSQL:/var/opt/mssql/data
-    ports:
-    - "1450:1433"
-  
+      - ${APPDATA}\microsoft\UserSecrets\:/root/.microsoft/usersecrets
+      - /run/desktop/mnt/host/c/Users/Thomas/.aspnet/https:/root/.aspnet/https/
+    #depends_on: 
+    #  - bancoDados
+    image: ${DOCKER_REGISTRY-}registro
+ 
+  #bancoDados: 
+  #    environment:
+  #      - SA_PASSWORD = Thomas.19983
+  #      - ACCEPT_EULA=Y
+  #    image: mcr.microsoft.com/mssql/server
+  #    ports: 
+  #      - "1450:1433"
+  #    volumes: 
+  #      - C:\Users\Thomas\Desktop\DADOSSQL:/var/opt/mssql/data
+version: "3.4"

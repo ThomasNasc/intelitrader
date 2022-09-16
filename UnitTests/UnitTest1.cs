@@ -1,4 +1,3 @@
-
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -196,7 +195,7 @@ namespace Registro.test
         [Fact]
         public async Task Post_a_user_With_Failure()
         {
-            User userForTest = new User()
+            User userForTest = new()
             {
                 //Usuario sem first name(atributo obrigatorio)
                 surName = "nome2",
