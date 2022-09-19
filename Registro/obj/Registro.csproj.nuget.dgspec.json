@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thomas\\Desktop\\PROGRAMACAO\\Registro\\Registro\\Registro.csproj": {}
+    "C:\\Users\\Thomas\\Desktop\\PROGRAMACAO\\Registro\\registro\\Registro.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thomas\\Desktop\\PROGRAMACAO\\Registro\\Registro\\Registro.csproj": {
+    "C:\\Users\\Thomas\\Desktop\\PROGRAMACAO\\Registro\\registro\\Registro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thomas\\Desktop\\PROGRAMACAO\\Registro\\Registro\\Registro.csproj",
+        "projectUniqueName": "C:\\Users\\Thomas\\Desktop\\PROGRAMACAO\\Registro\\registro\\Registro.csproj",
         "projectName": "Registro",
-        "projectPath": "C:\\Users\\Thomas\\Desktop\\PROGRAMACAO\\Registro\\Registro\\Registro.csproj",
+        "projectPath": "C:\\Users\\Thomas\\Desktop\\PROGRAMACAO\\Registro\\registro\\Registro.csproj",
         "packagesPath": "C:\\Users\\Thomas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thomas\\Desktop\\PROGRAMACAO\\Registro\\Registro\\obj\\",
+        "outputPath": "C:\\Users\\Thomas\\Desktop\\PROGRAMACAO\\Registro\\registro\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Thomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
