@@ -7,6 +7,7 @@ namespace Registro.Models
     {
         public UserContext(DbContextOptions<UserContext> options) : base(options)
         {
+            this.Database.EnsureCreated();
         }
         public virtual DbSet<User> Usuarios { get; set; }
 

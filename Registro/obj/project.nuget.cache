@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F6kZF6qi/Qgq7EZa44Fu2k1EzU/QVKuEzkP17zKl9kdaH05gxoADwfC7miClKQjNQPRpCx+O6HK6uLf2Zg7MSw==",
+  "dgSpecHash": "W9aFlLUR5xrhx72DldliXh0Rrj94cvKKjeiyAGNUeOrfMRKzPPWIvuKiimmzdtk2pHaVsHPBpv6t53Faus3k4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Thomas\\Desktop\\PROGRAMACAO\\Registro\\registro\\Registro.csproj",
+  "projectFilePath": "C:\\Users\\Thomas\\Desktop\\PROGRAMACAO\\Registro\\Registro\\Registro.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Thomas\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\Thomas\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

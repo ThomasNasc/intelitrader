@@ -1,0 +1,47 @@
+name: dockercompose11696851418925722991
+services:
+  bancoDados:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Thomas.19983
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1450"
+      protocol: tcp
+  registro:
+    build:
+      context: C:\Users\Thomas\Desktop\PROGRAMACAO\Registro
+      dockerfile: Registro/Dockerfile
+    depends_on:
+      bancoDados:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: "8081"
+      ASPNETCORE_URLS: https://+;http://+
+    image: registro
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8080"
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\Thomas\AppData\Roaming\microsoft\UserSecrets\
+      target: /root/.microsoft/usersecrets
+      bind:
+        create_host_path: true
+    - type: bind
+      source: /run/desktop/mnt/host/c/Users/Thomas/.aspnet/https
+      target: /root/.aspnet/https
+      bind:
+        create_host_path: true
+networks:
+  default:
+    name: dockercompose11696851418925722991_default

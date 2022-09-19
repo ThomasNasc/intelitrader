@@ -15,8 +15,5 @@ namespace Registro.Models
         public DateTime? dateOfCreation { get; set; }
 
 
-
-
-
     }
 }

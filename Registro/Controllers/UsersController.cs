@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Registro.Interfaces;
 using Registro.Models;
-using System.Runtime.InteropServices;
+
 
 namespace Registro.Controllers
 {
@@ -26,14 +26,7 @@ namespace Registro.Controllers
         {
             var users = await _userService.GetUsuarios();
 
-
-            if (users.Any())
-            {
                 return Ok(users);
-
-
-            }
-            return NotFound();
 
         }
 

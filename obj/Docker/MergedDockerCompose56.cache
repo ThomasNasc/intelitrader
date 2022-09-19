@@ -1,0 +1,32 @@
+name: dockercompose11696851418925722991
+services:
+  bancoDados:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Thomas.19983
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1450"
+      protocol: tcp
+  registro:
+    build:
+      context: C:\Users\Thomas\Desktop\PROGRAMACAO\Registro
+      dockerfile: Registro/Dockerfile
+    depends_on:
+      bancoDados:
+        condition: service_started
+    image: registro
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8080"
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose11696851418925722991_default

@@ -14,8 +14,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<UserContext>(
-//options => options.UseSqlServer("Data Source=DESKTOP-LLQVSH7\\MSSQLSERVER01;Initial Catalog= Usuarios;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
-options => options.UseSqlServer("Data Source=bancoDados;Initial Catalog= Usuarios;User ID=SA;Password=Thomas.19983;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+options => options.UseSqlServer("Data Source = bancoDados;Initial Catalog = Usuarios;User ID=SA;Password=Thomas.19983"));
+
+
 builder.Services.AddScoped<IUserService, UserServices>();
 var app = builder.Build();
 
