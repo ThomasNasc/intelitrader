@@ -10,6 +10,7 @@
         "dependencies": {
           "FluentAssertions": "6.7.0",
           "Microsoft.EntityFrameworkCore": "6.0.9",
+          "Microsoft.EntityFrameworkCore.InMemory": "6.0.9",
           "Microsoft.NET.Test.Sdk": "17.3.1",
           "Moq": "4.18.2",
           "Registro": "1.0.0",
@@ -156,6 +157,17 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/6.0.9": {},
+      "Microsoft.EntityFrameworkCore.InMemory/6.0.9": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.9"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "assemblyVersion": "6.0.9.0",
+            "fileVersion": "6.0.922.41505"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/6.0.9": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.9",
@@ -1709,6 +1721,13 @@
       "sha512": "sha512-rNIx4fr7KWH4ypghhI+78PhCUYBHdjVbQ3yKvj/KmUIe4d9pysHXT3lF9TuReVdMDsn5mEx+3Yez8s80J4/JLA==",
       "path": "microsoft.entityframeworkcore.analyzers/6.0.9",
       "hashPath": "microsoft.entityframeworkcore.analyzers.6.0.9.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/6.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uQWxbNXOSvvQWgcDRTIfP6xC6NvyH/B8TlhCumzrPOy681LOS9RAoMPTlClboE3NyK5ptfzZhkO2vRTki0lFFw==",
+      "path": "microsoft.entityframeworkcore.inmemory/6.0.9",
+      "hashPath": "microsoft.entityframeworkcore.inmemory.6.0.9.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/6.0.9": {
       "type": "package",

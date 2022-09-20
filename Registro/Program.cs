@@ -14,8 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<UserContext>(
-options => options.UseSqlServer("Data Source = bancoDados;Initial Catalog = Usuarios;User ID=SA;Password=Thomas.19983"));
-
+options =>  options.UseSqlServer("Data Source = bancoDados;Initial Catalog = Usuarios;User ID=SA;Password=Thomas.19983"));
 
 builder.Services.AddScoped<IUserService, UserServices>();
 var app = builder.Build();

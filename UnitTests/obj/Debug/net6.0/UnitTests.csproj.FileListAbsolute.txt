@@ -153,3 +153,4 @@ C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\obj\Debug\net6.0\refint\U
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\obj\Debug\net6.0\UnitTests.pdb
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\obj\Debug\net6.0\UnitTests.genruntimeconfig.cache
 C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\obj\Debug\net6.0\ref\UnitTests.dll
+C:\Users\Thomas\Desktop\PROGRAMACAO\Registro\UnitTests\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll

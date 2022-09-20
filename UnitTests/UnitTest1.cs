@@ -1,6 +1,7 @@
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Moq;
 using Registro.Controllers;
@@ -93,24 +94,8 @@ namespace Registro.test
             objectResult.Value.Should().BeOfType<List<User>>();
 
         }
-        [Fact]
-        public async Task Get_OnNoUsersFound_Return404()
-        {
-            //Arrange
-            var mockUserService = new Mock<IUserService>();
 
-            mockUserService.Setup(service => service.GetUsuarios())
-                .ReturnsAsync(new List<User>());
 
-            var sut = new UsersController(mockUserService.Object);
-            //Act
-            var result = await sut.GetAllUsuarios();
-
-            //Assert
-
-            result.Should().BeOfType<NotFoundResult>();
-
-        }
 
         [Fact]
         public async Task Get_Just_a_User()
@@ -359,9 +344,15 @@ namespace Registro.test
             ILogger<UserServices> logger = mock.Object;
             var options = new DbContextOptionsBuilder<UserContext>().Options;
             var mockSet = new Mock<DbSet<User>>();
+
             var mockContext = new Mock<UserContext>(options);
+
+
+
             mockContext.Setup(m => m.Usuarios).Returns(mockSet.Object);
-            var service = new UserServices(mockContext.Object, logger);
+
+
+              var service = new UserServices(mockContext.Object, logger);
 
 
             var result = await service.PostUser(userForTest);
@@ -372,46 +363,8 @@ namespace Registro.test
             Assert.NotEqual(userForTest.Id, result.Id);
             Assert.NotEqual(userForTest.dateOfCreation, result.dateOfCreation);
         }
-        //[Fact]
-        //public async void PUT_TEST_IF_USER_HAS_CHANGED_WITH_SUCESS_()
-        //{
-        //    var UserExpected = new User
-        //    {
-        //        Id = "c7bfdef8-27c0-4895-99d1-a14b048025e8",
-        //        firstName = "nome1",
-        //        surName = "nome2",
-        //        age = 23,
-        //        dateOfCreation = new DateTime(2020, 07, 02, 22, 59, 59)
-        //    };
 
 
-        //    var UserChange = new User()
-        //    {
-
-        //        firstName = "nome1",
-
-        //    };
-
-        //    var mock = new Mock<ILogger<UserServices>>();
-        //    ILogger<UserServices> logger = mock.Object;
-        //    var options = new DbContextOptionsBuilder<UserContext>().Options;
-
-        //    var mockSet = new Mock<DbSet<User>>();
-        //    mockSet.Setup(s => s.FindAsync("c7bfdef8-27c0-4895-99d1-a14b048025e8")).ReturnsAsync(UserExpected);
-
-        //    var mockContext = new Mock<UserContext>(options);
-        //    mockContext.Setup(m => m.Usuarios).Returns(mockSet.Object);
-
-        //    var service = new UserServices(mockContext.Object, logger);
-
-
-        //    var result = await service.PutUser("c7bfdef8-27c0-4895-99d1-a14b048025e8", UserChange);
-
-
-        //    result.Should().BeOfType<ObjectResult>();
-        //    var objectResult = result;
-        //    objectResult.StatusCode.Should().Be(204);
-        //}
         [Fact]
         public async void GetUNIQUEUSER_()
         {
