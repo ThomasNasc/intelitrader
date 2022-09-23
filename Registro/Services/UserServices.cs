@@ -95,9 +95,9 @@ namespace Registro.Services
             {
                 Id = Guid.NewGuid().ToString(),
                 firstName = user.firstName,
-                surName = user.surName,
+                surName = user.surName == null ? "": user.surName,
                 age = user.age,
-                dateOfCreation = DateTime.Now,
+                dateOfCreation = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time")),
             };
 
             _context.Usuarios.Add(setUser);

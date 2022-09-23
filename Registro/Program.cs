@@ -4,7 +4,19 @@ using Registro.Models;
 using Registro.Services;
 
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:3000", "https://sistema-de-cadastro-intelitrader-rn4r.vercel.app").AllowAnyHeader().AllowAnyMethod();
+                  
+                      });
+});
 
 // Add services to the container.
 
@@ -14,7 +26,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<UserContext>(
-options =>  options.UseSqlServer("Data Source = bancoDados;Initial Catalog = Usuarios;User ID=SA;Password=Thomas.19983"));
+options => options.UseSqlServer("Data Source = bancoDados;Initial Catalog = Usuarios;User ID=SA;Password=Thomas.19983"));
 
 builder.Services.AddScoped<IUserService, UserServices>();
 var app = builder.Build();
@@ -27,6 +39,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();
 
